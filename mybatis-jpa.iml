@@ -5,7 +5,7 @@
       <configuration />
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -14,6 +14,33 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/区块链/ulipay-server/src/main/lib/local/mysql-connector-java-5.1.45.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/区块链/ulipay-server/src/main/lib/local/netty-all-4.1.17.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/区块链/ulipay-server/src/main/lib/local/empty.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.0.RELEASE" level="project" />
@@ -24,10 +51,12 @@
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-extension:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-core:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-annotation:3.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:5.1.10" level="project" />
-    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:2.0" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.3.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.26" level="project" />
   </component>
 </module>

@@ -16,15 +16,15 @@ public class SqlMethodSplitIsNotNull implements ISqlMethodSplit {
     public List<String> sqlMethodSplit(List<String> attributes) {
         List<String> cruxList=new ArrayList<>();
         for (String attribute : attributes) {
-            if(attribute.indexOf(KeyWord.And.getValue())==-1){
+            if(attribute.indexOf(KeyWord.IsNotNull.getValue())==-1){
                 cruxList.add(attribute);
                 continue;
             }
-            String[] cruxs=attribute.split(KeyWord.And.getValue());
+            String[] cruxs=attribute.split(KeyWord.IsNotNull.getValue());
             if(cruxs.length>0){
                 for (String s : cruxs) {
                     cruxList.add(s);
-                    cruxList.add(KeyWord.And.getValue());
+                    cruxList.add(KeyWord.IsNotNull.getValue());
                 }
             }
         }

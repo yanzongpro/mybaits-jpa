@@ -17,6 +17,7 @@ import java.util.Map;
  */
 public class LinkTableSelect<T> {
 
+    public BaseMapper baseMapper;
 
 
     public void linkSelect(StackTraceElement stackTraceElement, T t){
@@ -148,22 +149,24 @@ public class LinkTableSelect<T> {
         if(!chackAnnotation(oneByOne)){
             return;
         }
-        BaseMapper baseMapper=null;
-        Object objectBean= oneByOne.aimEntity().getAnnotation(DaoClass.class);
-        if(objectBean!=null){
-            DaoClass daoClass= (DaoClass) objectBean;
-            baseMapper= (BaseMapper) MyBaitsJpaContext.getBean(daoClass.daoClass());
-        }else{
-            String classByName=oneByOne.aimEntity().getName().substring(oneByOne.aimEntity().getName().lastIndexOf(".")+1);
-            baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
-        }
         if(baseMapper==null){
-            System.err.println("未找到"+oneByOne.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            Object objectBean= oneByOne.aimEntity().getAnnotation(DaoClass.class);
+            if(objectBean!=null){
+                DaoClass daoClass= (DaoClass) objectBean;
+                baseMapper= (BaseMapper) MyBaitsJpaContext.getBean(daoClass.daoClass());
+            }else{
+                String classByName=oneByOne.aimEntity().getName().substring(oneByOne.aimEntity().getName().lastIndexOf(".")+1);
+                baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
+            }
+            if(baseMapper==null){
+                System.err.println("未找到"+oneByOne.aimEntity().getName()+"对应dao");
+                System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
+                System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
+                System.err.println("连表查询失败");
+                return;
+            }
         }
+
         List keys=new ArrayList();
         for (Object o : list) {
             keys.add(getGetMethod(o,oneByOne.field()));

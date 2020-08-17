@@ -1,6 +1,7 @@
 package com.mybaits.jpa.util;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+
 import java.io.Serializable;
 
 /**
@@ -13,24 +14,16 @@ public class PageInfoHelp implements Serializable {
 
     @TableField(exist = false)
     private Integer pageNum;
-
     @TableField(exist = false)
     private Integer pageSize;
 
-    public static void setDefault(PageInfoHelp parameter) {
-        if (parameter.getPageNum() == null) {
-            parameter.setPageNum(1);
+    public static void setDefault(Integer pageNum,Integer pageSize) {
+        if (pageNum== null) {
+            pageNum=1;
         }
-        if (parameter.getPageSize() == null) {
-            parameter.setPageSize(DEFAULT_PAGE_SIZE);
+        if (pageSize == null) {
+            pageSize=DEFAULT_PAGE_SIZE;
         }
-        if (parameter.getPageSize() > PageInfoHelp.MAX_PAGE_SIZE) {
-            parameter.setPageSize(PageInfoHelp.MAX_PAGE_SIZE);
-        }
-    }
-
-    public void init() {
-        setDefault(this);
     }
 
     /**

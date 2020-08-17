@@ -16,15 +16,15 @@ public class SqlMethodSplitNotLike implements ISqlMethodSplit {
     public List<String> sqlMethodSplit(List<String> attributes) {
         List<String> cruxList=new ArrayList<>();
         for (String attribute : attributes) {
-            if(attribute.indexOf(KeyWord.IsNotNull.getValue())==-1){
+            if(attribute.indexOf(KeyWord.NotLike.getValue())==-1){
                 cruxList.add(attribute);
                 continue;
             }
-            String[] cruxs=attribute.split(KeyWord.IsNotNull.getValue());
+            String[] cruxs=attribute.split(KeyWord.NotLike.getValue());
             if(cruxs.length>0){
                 for (String s : cruxs) {
                     cruxList.add(s);
-                    cruxList.add(KeyWord.IsNotNull.getValue());
+                    cruxList.add(KeyWord.NotLike.getValue());
                 }
             }
         }
