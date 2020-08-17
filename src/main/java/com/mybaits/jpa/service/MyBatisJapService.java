@@ -40,7 +40,6 @@ public class MyBatisJapService<D extends BaseMapper<T>, T> extends ServiceImpl<D
         QueryWrapper<T> queryWrapper=jpaQueryWrapper.getPageInfoQueryWrapper(t);
         List<T> infos = baseMapper.selectList(queryWrapper);
         LinkTableSelect<T> linkTableSelect=new LinkTableSelect<T>();
-        linkTableSelect.baseMapper=baseMapper;
         linkTableSelect.linkSelect(stackTrace[1],infos);
         return new PageInfo<T>(infos);
     }
@@ -58,7 +57,6 @@ public class MyBatisJapService<D extends BaseMapper<T>, T> extends ServiceImpl<D
         queryWrapper=jpaQueryWrapper.getPageInfoQueryWrapper(t,queryWrapper);
         List<T> infos = baseMapper.selectList(queryWrapper);
         LinkTableSelect<T> linkTableSelect=new LinkTableSelect<T>();
-        linkTableSelect.baseMapper=baseMapper;
         linkTableSelect.linkSelect(stackTrace[1],infos);
         return new PageInfo<T>(infos);
     }
@@ -117,7 +115,6 @@ public class MyBatisJapService<D extends BaseMapper<T>, T> extends ServiceImpl<D
         QueryWrapper<T> queryWrapper=jpaQueryWrapper.getQueryWrapper(keyWords,attributes,params);
         T t=baseMapper.selectOne(queryWrapper);
         LinkTableSelect<T> linkTableSelect=new LinkTableSelect<T>();
-        linkTableSelect.baseMapper=baseMapper;
         linkTableSelect.linkSelect(stackTrace[1],t);
         return t;
     }
@@ -138,7 +135,6 @@ public class MyBatisJapService<D extends BaseMapper<T>, T> extends ServiceImpl<D
         queryWrapper=jpaQueryWrapper.getQueryWrapper(queryWrapper,keyWords,attributes,params);
         T t=baseMapper.selectOne(queryWrapper);
         LinkTableSelect<T> linkTableSelect=new LinkTableSelect<T>();
-        linkTableSelect.baseMapper=baseMapper;
         linkTableSelect.linkSelect(stackTrace[1],t);
         return t;
     }
@@ -158,7 +154,6 @@ public class MyBatisJapService<D extends BaseMapper<T>, T> extends ServiceImpl<D
         QueryWrapper<T> queryWrapper=jpaQueryWrapper.getQueryWrapper(keyWords,attributes,params);
         List<T> list=baseMapper.selectList(queryWrapper);
         LinkTableSelect<T> linkTableSelect=new LinkTableSelect<T>();
-        linkTableSelect.baseMapper=baseMapper;
         linkTableSelect.linkSelect(stackTrace[1],list);
         return list;
     }
@@ -177,7 +172,6 @@ public class MyBatisJapService<D extends BaseMapper<T>, T> extends ServiceImpl<D
         queryWrapper=jpaQueryWrapper.getQueryWrapper(queryWrapper,keyWords,attributes,params);
         List<T> list=baseMapper.selectList(queryWrapper);
         LinkTableSelect<T> linkTableSelect=new LinkTableSelect<T>();
-        linkTableSelect.baseMapper=baseMapper;
         linkTableSelect.linkSelect(stackTrace[1],list);
         return list;
     }
