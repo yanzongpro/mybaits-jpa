@@ -17,13 +17,17 @@ public class PageInfoHelp implements Serializable {
     @TableField(exist = false)
     private Integer pageSize;
 
-    public static void setDefault(Integer pageNum,Integer pageSize) {
+    public static Integer setDefaultNum(Integer pageNum) {
         if (pageNum== null) {
-            pageNum=1;
+            return FIRST_PAGE;
         }
-        if (pageSize == null) {
-            pageSize=DEFAULT_PAGE_SIZE;
+        return pageNum;
+    }
+    public static Integer setDefaultSize(Integer pageSize) {
+        if (pageSize== null) {
+            return DEFAULT_PAGE_SIZE;
         }
+        return pageSize;
     }
 
     /**
