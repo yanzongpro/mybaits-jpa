@@ -310,6 +310,9 @@ public class MyBatisJapService<D extends BaseMapper<T>, T> extends ServiceImpl<D
                 return f1.getName().compareTo(f2.getName());
             }
         });
+        for (Field field : fields) {
+            set.add(field);
+        }
         return set;
     }
 }
