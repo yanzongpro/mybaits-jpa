@@ -88,6 +88,9 @@ public class JpaQueryWrapper<T> {
                     if(tableField!=null){
                         if(tableField.exist()){
                             if(resultValue instanceof String){
+                                if("".equals(resultValue)){
+                                    continue;
+                                }
                                 queryWrapper.like(SqlUtils.HumpToUnderline(name),resultValue);
                             }else {
                                 queryWrapper.eq(SqlUtils.HumpToUnderline(name),resultValue);
@@ -96,6 +99,9 @@ public class JpaQueryWrapper<T> {
                         }
                     }else{
                         if(resultValue instanceof String){
+                            if("".equals(resultValue)){
+                                continue;
+                            }
                             queryWrapper.like(SqlUtils.HumpToUnderline(name),resultValue);
                         }else {
                             queryWrapper.eq(SqlUtils.HumpToUnderline(name),resultValue);
@@ -186,6 +192,9 @@ public class JpaQueryWrapper<T> {
                     if(tableField!=null){
                         if(tableField.exist()){
                             if(resultValue instanceof String){
+                                if("".equals(resultValue)){
+                                    continue;
+                                }
                                 queryWrapper.like(SqlUtils.HumpToUnderline(name),resultValue);
                             }else {
                                 queryWrapper.eq(SqlUtils.HumpToUnderline(name),resultValue);
@@ -194,6 +203,9 @@ public class JpaQueryWrapper<T> {
                         }
                     }else{
                         if(resultValue instanceof String){
+                            if("".equals(resultValue)){
+                                continue;
+                            }
                             queryWrapper.like(SqlUtils.HumpToUnderline(name),resultValue);
                         }else {
                             queryWrapper.eq(SqlUtils.HumpToUnderline(name),resultValue);
