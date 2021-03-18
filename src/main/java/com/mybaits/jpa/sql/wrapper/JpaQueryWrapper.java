@@ -52,6 +52,12 @@ public class JpaQueryWrapper<T> {
                     if(!pageQuery.isQuery()){
                         continue;
                     }
+                    if(resultValue instanceof String){
+                        String stringValue= (String) resultValue;
+                        if("".equals(stringValue)){
+                            continue;
+                        }
+                    }
                     if(QueryType.EQ.getValue().equals(pageQuery.queryType().getValue())){
                         queryWrapper.eq(SqlUtils.HumpToUnderline(name),resultValue);
                     }else if(QueryType.NE.getValue().equals(pageQuery.queryType().getValue())){
@@ -143,6 +149,12 @@ public class JpaQueryWrapper<T> {
                     }
                     if(!pageQuery.isQuery()){
                         continue;
+                    }
+                    if(resultValue instanceof String){
+                        String stringValue= (String) resultValue;
+                        if("".equals(stringValue)){
+                            continue;
+                        }
                     }
                     if(QueryType.EQ.getValue().equals(pageQuery.queryType().getValue())){
                         queryWrapper.eq(SqlUtils.HumpToUnderline(name),resultValue);

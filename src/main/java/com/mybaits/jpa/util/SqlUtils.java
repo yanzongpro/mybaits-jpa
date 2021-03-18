@@ -57,52 +57,52 @@ public class SqlUtils {
     public static void checkParam(String key,String type,Object param){
         if(KeyWord.And.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.And.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.And.getValue()+" is null");
             }
         }
         if(KeyWord.Or.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.Or.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.Or.getValue()+" is null");
             }
         }
         if(KeyWord.In.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.In.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.In.getValue()+" is null");
             }
         }
         if(KeyWord.NotIn.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.In.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.In.getValue()+" is null");
             }
         }
         if(KeyWord.Like.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.Like.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.Like.getValue()+" is null");
             }
         }
         if(KeyWord.NotLike.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.NotLike.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.NotLike.getValue()+" is null");
             }
         }
         if(KeyWord.After.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.After.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.After.getValue()+" is null");
             }
         }
         if(KeyWord.Before.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.Before.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.Before.getValue()+" is null");
             }
         }
         if(KeyWord.LessThan.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.LessThan.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.LessThan.getValue()+" is null");
             }
         }
         if(KeyWord.GreaterThan.getValue().equals(type)){
             if(param==null){
-                throw new RuntimeException("列名"+key+" "+ KeyWord.GreaterThan.getValue()+" 条件不能为null");
+                throw new RuntimeException("column "+key+" "+ KeyWord.GreaterThan.getValue()+" is null");
             }
         }
     }

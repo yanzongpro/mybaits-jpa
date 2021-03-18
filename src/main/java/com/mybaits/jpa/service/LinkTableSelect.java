@@ -158,11 +158,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+oneByOne.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+oneByOne.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+oneByOne.aimEntity().getName()+"  dao");
         }
 
         List keys=new ArrayList();
@@ -205,11 +205,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+oneByOne.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+oneByOne.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+oneByOne.aimEntity().getName()+"  dao");
         }
         QueryWrapper queryWrapper=new QueryWrapper();
         queryWrapper.eq(oneByOne.aimField(),getGetMethod(object,oneByOne.field()));
@@ -244,11 +244,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+oneByMany.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+oneByMany.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+oneByMany.aimEntity().getName()+"  dao");
         }
         List keys=new ArrayList();
         for (Object o : list) {
@@ -293,11 +293,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+oneByMany.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+oneByMany.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+oneByMany.aimEntity().getName()+"  dao");
         }
         QueryWrapper queryWrapper=new QueryWrapper();
         queryWrapper.eq(oneByMany.aimField(),getGetMethod(object,oneByMany.field()));
@@ -331,11 +331,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+manyByOne.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+manyByOne.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+manyByOne.aimEntity().getName()+"  dao");
         }
         Map<Object,String> map=new HashMap<>();
         for (Object o : list) {
@@ -377,11 +377,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+manyByOne.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+manyByOne.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+manyByOne.aimEntity().getName()+"  dao");
         }
         QueryWrapper queryWrapper=new QueryWrapper();
         queryWrapper.eq(manyByOne.aimField(),getGetMethod(object,manyByOne.field()));
@@ -414,11 +414,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+manyByMany.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoBean=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+manyByMany.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+manyByMany.aimEntity().getName()+"  dao");
         }
         Map<Object,String> map=new HashMap<>();
         for (Object o : list) {
@@ -464,11 +464,11 @@ public class LinkTableSelect<T> {
             baseMapper= (BaseMapper) MyBaitsJpaContext.getBean("I"+classByName+"Dao");
         }
         if(baseMapper==null){
-            System.err.println("未找到"+manyByMany.aimEntity().getName()+"对应dao");
-            System.err.println("请检查实体与dao命名是否一致如：IDemoDao Demo");
-            System.err.println("或者在实体上添加注解：@DaoClass(daoClass=\"IDemoDao.class\")");
-            System.err.println("连表查询失败");
-            return;
+            System.err.println("Not found"+manyByMany.aimEntity().getName()+"  dao");
+            System.err.println("Please check that the entity and DAO names are consistent");
+            System.err.println("Or add annotations to the entity：@DaoClass(daoClass=\"IDemoDao.class\")");
+            System.err.println("Join table query failed");
+            throw  new RuntimeException("Not found"+manyByMany.aimEntity().getName()+"  dao");
         }
         QueryWrapper queryWrapper=new QueryWrapper();
         queryWrapper.in(manyByMany.aimField(),getGetMethod(object,manyByMany.field()));
